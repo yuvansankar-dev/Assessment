@@ -5,13 +5,13 @@ export default function QuesPart({ data, setData, count }) {
         if (!e.target.checked) {
             setData(pre => {
                 pre[count].selectedAns = pre[count].selectedAns.filter((selected) => selected !== e.target.value);
-                return { ...pre }
+                return [ ...pre ]
             })
         }
         else {
             setData(pre => {
                 pre[count].selectedAns.push(e.target.value);
-                return { ...pre }
+                return [ ...pre ]
             })
         }
         console.log(e)
@@ -19,10 +19,10 @@ export default function QuesPart({ data, setData, count }) {
     return (
         <div>
             <h2>{data.question}</h2>
-            {data.options.map((option) =>
-                <>
+            {data.options.map((option,idx) =>
+                <div key={idx}>
                     <input type="checkbox" name={option} checked={data.selectedAns.includes(option)} value={option} onChange={checkSelected} />
-                    <label htmlFor={option}>{option}</label></>
+                    <label htmlFor={option}>{option}</label></div>
             )}
         </div>
     )
