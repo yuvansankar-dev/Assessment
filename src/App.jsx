@@ -11,8 +11,8 @@ function App() {
 const [data,setData]=useState(queData)
   return (
     <>
-      <Header completed={!count<queData.length-1}/>
-      {count<queData.length-1 &&<Content data={data[count]} setData={setData} count={count} setCount={setCount}/>}
+      <Header completed={count===queData.length}/>
+      {count<queData.length &&<Content data={data[count]} setData={setData} count={count} setCount={setCount}/>}
     </>
   )
 }

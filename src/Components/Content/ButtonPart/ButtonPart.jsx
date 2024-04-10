@@ -14,8 +14,8 @@ else {
   return (
     <div className='button'>
       {Boolean(count)&&<button onClick={()=>buttonClick("Previous")}>Previous</button>}
-      {count<queData.length-2 &&<button disabled ={!data.selectedAns.length} onClick={()=>buttonClick("Next")}>Next</button>}
-      {count===queData.length-2 &&<button disabled ={!data.selectedAns.length} onClick={()=>buttonClick("Submit")}>Submit</button>}
+      {count<queData.length-1 &&<button disabled ={!data.selectedAns.length} onClick={()=>buttonClick("Next")}>Next</button>}
+      {count===queData.length-1 &&<button disabled ={!data.selectedAns.length} onClick={()=>buttonClick("Submit")}>Submit</button>}
     </div>
   )
 }
