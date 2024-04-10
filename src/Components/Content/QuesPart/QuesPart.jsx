@@ -10,7 +10,7 @@ export default function QuesPart({ data, setData, count }) {
         }
         else {
             setData(pre => {
-                pre[count].selectedAns.push(e.target.value);
+                !pre[count].selectedAns.includes(e.target.value)&&pre[count].selectedAns.push(e.target.value);
                 return [ ...pre ]
             })
         }

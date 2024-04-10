@@ -5,7 +5,7 @@ export default function Completed({data}) {
     <div>
       <h2>Completed</h2>
 {
-    data.map((val)=><><h3>{val.question}</h3>{val.selectedAns.map((ans)=><div>{ans}</div>)}</> )
+    data.map((val)=><><h3>{val.question}</h3>{val.selectedAns.map((ans)=><h6>{ans}</h6>)}</> )
 }
     </div>
   )
